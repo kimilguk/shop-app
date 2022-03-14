@@ -1,0 +1,20 @@
+pluginManagement {
+    repositories {
+        gradlePluginPortal()
+        google()
+        mavenCentral()
+        maven { url 'https://jitpack.io' }//깃기반 라이브러리를 사용하기 위해서 추가
+        jcenter() //앙코 라이브러리 다운받기 위해서 추가
+    }
+}
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+        maven { url 'https://jitpack.io' }//깃기반 라이브러리를 사용하기 위해서 추가
+        jcenter() //앙코 라이브러리 다운받기 위해서 추가
+    }
+}
+rootProject.name = "Shop"
+include ':app'
