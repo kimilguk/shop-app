@@ -6,7 +6,6 @@
 - 신규작업(안드로이드앱) : https://github.com/kimilguk/shop-app.git
 - 인텔리J 에서 깃 암호 저장하지 않게 설정(아래)
 - https://stackoverflow.com/questions/28142361/change-remote-repository-credentials-authentication-on-intellij-idea-14
-- 헤로쿠용 빌드 파일 고정함. version '1.0-SNAPSHOT' 수정.
 - 작업기간: 00일 ( 20220000 ~ 20220000 )
 
 ### 학습목차
