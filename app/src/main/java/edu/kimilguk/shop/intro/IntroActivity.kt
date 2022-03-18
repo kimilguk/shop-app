@@ -4,8 +4,13 @@ import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import edu.kimilguk.shop.api.ShopApi
+import edu.kimilguk.shop.users.SignupActivity
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
 import org.jetbrains.anko.setContentView
+import org.jetbrains.anko.startActivity
 import java.lang.Exception
 
 class IntroActivity : AppCompatActivity() {
@@ -22,6 +27,12 @@ class IntroActivity : AppCompatActivity() {
             } catch (e: Exception) {
                 Log.d("인트로액티비티", "/api/hello 호출오류", e)
             }
+        }
+        //코루틴영역에서 스레드 실행:인트로 액티비티 이 후 회원가입 액티비티 띄우기
+        GlobalScope.launch {
+            delay(1000)//1초 대기
+            startActivity<SignupActivity>()
+            finish()//현재 인트로 액티비티 종료(뒤로가기 해도 인트로가 보이지 않음)
         }
     }
 }

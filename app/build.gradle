@@ -34,6 +34,7 @@ ext {
     anko_version = '0.10.8'
     retrofit_version = '2.6.0'
     okhttp_version = '3.8.0'
+    ankoMvvm_version = '2.2.0-alpha01'
 }
 dependencies {
     implementation 'androidx.core:core-ktx:1.7.0'
@@ -54,4 +55,11 @@ dependencies {
     implementation "com.squareup.okhttp3:logging-interceptor:$okhttp_version"
     implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
     implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
+    //ankoMVVM 템플릿구성: Activity(Fragment화면위화면구성), ViewModel + UI(xml이 아닌 AnkoLayout코드로레이아웃구성)
+    implementation 'com.github.benimario:ankomvvm:0.1.0'
+    implementation "androidx.lifecycle:lifecycle-extensions:$ankoMvvm_version"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$ankoMvvm_version"
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:$ankoMvvm_version"
+    implementation "androidx.lifecycle:lifecycle-runtime-ktx:$ankoMvvm_version"
+
 }

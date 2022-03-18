@@ -3,7 +3,7 @@ package edu.kimilguk.shop.api
 /**
  * 스프링부트API에서 응답받은 데이터 클래스
  */
-data class ApiResponse<T>(
+data class ApiResponse<T>(//<T> 는 제네릭 타입이라고 하고 호출시 데이터형을 지정한다
     val success: Boolean,
     val data: T? = null,//T타입이 null이면 data에 null을 입력한다.
     val message: String? = null
