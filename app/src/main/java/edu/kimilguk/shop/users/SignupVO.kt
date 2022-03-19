@@ -6,7 +6,7 @@ import android.util.Patterns
  * 클래스간 데이터 전송 임시 저장 VO(Value Object)클래스
  */
 class SignupVO(
-    val email: String?,
+    val email: String?,//?는 Null 허용을 표시한다. 코틀린은 기본이 Null 허용하지 않음.
     val password: String?,
     val name: String?
 ) {
