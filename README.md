@@ -17,11 +17,15 @@
 - 구현2: Model(API인터페이스) - ViewModel(데이터바인딩) - Activity(화면)
 - 구현3: 회원 로그인 액티비티 구현
 
-### 20220320(일) 작업예정
-- SigninActivity, SigninActivityUI, ShopApi(@POST매핑) 순서로 작업한다.
+### 20220322(화) 작업예정
+- 로그인 시 토큰정보를 저장하여 여러 액티비티에서 스프링부트API로 토큰정보를 보낼 때
+- SharedPreferences 클래스객체(txt파일)에 저장된 토큰정보를 사용하는 코딩
+
+### 20220321(월) 회원로그인2차
+- SigninViewModel.kt, SigninActivity, SigninActivityUI 순서로 작업한다.
 
 ### 20220319(토) 회원로그인1차
-- SigninRequestVO.kt, SigninResponseVO.kt, SigninViewModel.kt
+- SigninRequestVO.kt, SigninResponseVO.kt, ShopApi(@POST매핑)
 
 ### 20220318(금) 회원등록
 - MVVM(Model-View-ViewModel)이란?
