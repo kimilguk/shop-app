@@ -2,6 +2,7 @@ package edu.kimilguk.shop.auth
 
 import android.app.Application
 import androidx.lifecycle.MutableLiveData
+import edu.kimilguk.shop.Prefs
 import edu.kimilguk.shop.api.ApiResponse
 import edu.kimilguk.shop.api.ShopApi
 import kotlinx.coroutines.Dispatchers
@@ -31,7 +32,12 @@ class SigninViewModel(app: Application) : BaseViewModel(app) {
 
     private fun onSigninResponse(response: ApiResponse<SigninResponseVO>) {
         //TODO("로그인 성공 후 처리")
-        if(response.success) {
+        if(response.success && response.data != null) {
+            //response.data 토큰값이 있을때 저장로직(아래)
+            Prefs.token = response.data.token
+            Prefs.refreshtoken = response.data.refreshToken
+            Prefs.userName = response.data.userName
+            Prefs.userId = response.data.userId
             toast("로그인 되었습니다.")
         } else {
             toast(response.message?:"알수 없는 오류가 발생했습니다.")
