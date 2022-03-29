@@ -11,8 +11,8 @@ import kotlin.reflect.KClass
  */
 class SigninActivity : BaseActivity<SigninViewModel>() {
     /*override val viewModelType: KClass<SigninViewModel>
-        get() = SigninViewModel::class//TODO("Not yet implemented")*/
-    override val viewModelType = SigninViewModel::class
+        get() = SigninViewModel::class//객체생성=::=참조=생성자를 호출한다.//TODO("Not yet implemented")*/
+    override val viewModelType = SigninViewModel::class//객체생성=::=참조=생성자를 호출한다.
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         SigninActivityUI(getViewModel()) //위 초기 viewModelType객체를 주입

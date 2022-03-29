@@ -16,6 +16,7 @@ interface ShopApi {
     companion object {//static 대신 companion 을 사용, object는 싱글톤 클래스로 실행과 동시에 1개의 객체가 생성된다.
         val instance = ApiGenerator() //new 키워드없이 통신객체생성
             .generate(ShopApi::class.java)//코틀린에서 더블콜론(::)은 리플렉션(참조)을 위해 사용합니다.
+        //객체생성=::=참조=생성자를 호출한다.
         //끝에 .java 를 사용한 이유는 JVM에서 실행시 Kclass 에서 자바클래스로 바꾸어 주기 위해서 이다.
     }
     @POST("/api/users") //스프링부트의 UsersApiController 와 매칭된다.

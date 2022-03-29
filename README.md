@@ -17,8 +17,17 @@
 - 구현2: Model(API인터페이스) - ViewModel(데이터바인딩) - Activity(화면)
 - 구현3: 회원 로그인 액티비티 구현
 
-### 20220329(화) 작업예정
-- 상품 등록 UI 추가
+### 20220330(수) 상품 등록 UI 추가2
+- 네비게이션 드로우어에 메뉴 추가
+
+### 20220329(화) 상품 등록 UI 추가1
+- ProductMainViewModel.kt: 상품 진입 로직을 실행하는 클래스
+- ProductMainActivity.kt: 상품 메인레이아웃 클래스(AndroidManifest.xml에 등록)
+- ProductMainActivityUI.kt: 상품 메인 화면 디자인 구현
+- IntroActivity.kt: SharedPreferences에 등록된 토큰이 있다면 상품메인화면으로 이동 추가
+- SigninViewModel.kt: 로그인 후 현재화면 종료 및 상폼 메인화면으로 입장 추가
+- SignupViewModel.kt: finishActivity() //회원가입 후 현재 화면 제거 코딩 추가
+- 드로우어 레이아웃에 툴바에 검색메뉴 및 햄버거 버튼 추가
 
 ### 20220322(화) 회원로그인 후 웹서버세션 대신에 토큰값을 저장하는 로직 구현
 - 로그인 시 토큰정보를 저장하여 여러 액티비티에서 토큰인증이 필요한 스프링부트API로 토큰정보를 보낼 때

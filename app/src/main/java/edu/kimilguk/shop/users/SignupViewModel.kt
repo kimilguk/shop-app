@@ -36,6 +36,7 @@ class SignupViewModel(app: Application): BaseViewModel(app) {
         //TODO("Not yet implemented")//강제로 예외 발생
         if(response.success) {
             toast("회원가입이 되었습니다. 로그인 후 이용해 주세요")
+            finishActivity() //회원가입 후 현재 화면 제거
         } else {
             //?: 엘비스연산자 사용해서 null 일때 출력값 생성
             toast(response.message ?: "회원가입에서 알 수 없는 오류가 발생했습니다.")

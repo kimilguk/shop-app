@@ -3,8 +3,10 @@ package edu.kimilguk.shop.intro
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
+import edu.kimilguk.shop.Prefs
 import edu.kimilguk.shop.api.ShopApi
 import edu.kimilguk.shop.auth.SigninActivity
+import edu.kimilguk.shop.product.ProductMainActivity
 import edu.kimilguk.shop.users.SignupActivity
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.delay
@@ -32,7 +34,11 @@ class IntroActivity : AppCompatActivity() {
         //코루틴영역에서 스레드 실행:인트로 액티비티 이 후 회원가입 액티비티 띄우기
         GlobalScope.launch {
             delay(1000)//1초 대기
-            startActivity<SigninActivity>()
+            if(Prefs.token.isNullOrEmpty()) {//SharedPreferences에 등록된 토큰이 없다면,
+                startActivity<SigninActivity>() //로그인 화면으로 이동
+            } else {
+                startActivity<ProductMainActivity>() //상폼 메인화면으로 이동
+            }
             finish()//현재 인트로 액티비티 종료(뒤로가기 해도 인트로가 보이지 않음)
         }
     }

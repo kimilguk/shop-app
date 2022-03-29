@@ -5,6 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import edu.kimilguk.shop.Prefs
 import edu.kimilguk.shop.api.ApiResponse
 import edu.kimilguk.shop.api.ShopApi
+import edu.kimilguk.shop.product.ProductMainActivity
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import net.codephobia.ankomvvm.lifecycle.BaseViewModel
@@ -39,6 +40,7 @@ class SigninViewModel(app: Application) : BaseViewModel(app) {
             Prefs.userName = response.data.userName
             Prefs.userId = response.data.userId
             toast("로그인 되었습니다.")
+            startActivityAndFinish<ProductMainActivity>() //로그인 후 현재화면 종료 및 상폼 메인화면으로 입장
         } else {
             toast(response.message?:"알수 없는 오류가 발생했습니다.")
         }
