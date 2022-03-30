@@ -17,16 +17,22 @@
 - 구현2: Model(API인터페이스) - ViewModel(데이터바인딩) - Activity(화면)
 - 구현3: 회원 로그인 액티비티 구현
 
-### 20220330(수) 상품 등록 UI 추가2
-- 네비게이션 드로우어에 메뉴 추가
+### 20220331(목) 상품 등록 MVVM 클래스 구성 예정
+- ProductCreateActivity.kt 부터 시작
 
-### 20220329(화) 상품 등록 UI 추가1
-- ProductMainViewModel.kt: 상품 진입 로직을 실행하는 클래스
-- ProductMainActivity.kt: 상품 메인레이아웃 클래스(AndroidManifest.xml에 등록)
-- ProductMainActivityUI.kt: 상품 메인 화면 디자인 구현
-- IntroActivity.kt: SharedPreferences에 등록된 토큰이 있다면 상품메인화면으로 이동 추가
-- SigninViewModel.kt: 로그인 후 현재화면 종료 및 상폼 메인화면으로 입장 추가
-- SignupViewModel.kt: finishActivity() //회원가입 후 현재 화면 제거 코딩 추가
+### 20220330(수) 상품 메인 MVVM 클래스 구성2
+- ProductMainActivityUI.kt 수정: 네비게이션 드로우어에 메뉴 추가
+- ProductMainNaviHeader.kt 추가: ProductMainActivityUI의 navigationView{} 에 addHeaderView() 추가
+- ProductMainActivityUI.kt 수정: 로그아웃 구현
+- ProductMainActivityUI.kt 수정: 상품등록 버튼 추가
+
+### 20220329(화) 상품 메인 MVVM 클래스 구성1
+- ProductMainViewModel.kt 추가: 상품 진입 로직을 실행하는 클래스
+- ProductMainActivity.kt 추가: 상품 메인레이아웃 클래스(AndroidManifest.xml에 등록)
+- ProductMainActivityUI.kt 추가: 상품 메인 화면 디자인 구현
+- IntroActivity.kt 수정: SharedPreferences에 등록된 토큰이 있다면 상품메인화면으로 이동 추가
+- SigninViewModel.kt 수정: 로그인 후 현재화면 종료 및 상폼 메인화면으로 입장 추가
+- SignupViewModel.kt 수정: finishActivity() //회원가입 후 현재 화면 제거 코딩 추가
 - 드로우어 레이아웃에 툴바에 검색메뉴 및 햄버거 버튼 추가
 
 ### 20220322(화) 회원로그인 후 웹서버세션 대신에 토큰값을 저장하는 로직 구현
@@ -41,7 +47,7 @@
 
 ### 20220318(금) 회원등록
 - MVVM(Model-View-ViewModel)이란?
-- Model, View, ViewModel 로 프로그램 구조를 분리해 서로간의 의존성을 줄이고,
+- Model(API/DB데이터), View(UI), ViewModel(로직서비스) 로 프로그램 구조를 분리해 서로간의 의존성을 줄이고,
 - 뷰를 단순화시켜 유지보수성을 높일 수 있는 프로그래밍 패턴이다.
 - AnkoMVVM구조는 View(Activity ankoLayout화면) - ViewModel(데이터바인딩) - Model(API인터페이스)
 - build.gradle 에 AnkoMVVM 템플릿 모듈추가

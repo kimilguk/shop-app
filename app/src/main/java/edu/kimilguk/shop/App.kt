@@ -10,7 +10,7 @@ class App : Application() {
         super.onCreate()
         instance = this
     }
-    companion object {//static 대신 companion 을 사용, object는 싱글톤 클래스명시
+    companion object {//static 대신 companion 을 사용, object는 싱글톤 클래스로 실행과 동시에 1개의 객체가 생성된다.
         lateinit var instance: App//var 전용 lateinit=초기화 지연은 사용할지 모르는 데이터를 미리 초기화할 필요가 없다.(메모리 성능향상)
     }
 }

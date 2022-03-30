@@ -19,10 +19,7 @@ class ProductMainActivity : BaseActivity<ProductMainViewModel>() {
         ui.setContentView(this) //drawerLayout has not been initialized 객체초기화 에러발생 방지
         /*ProductMainActivityUI(getViewModel()) //위 초기 viewModelType객체를 주입
             .setContentView(this) //UI화면 인플레이트(출력)*/
-        setupDrawerListener()
-    }
-
-    private fun setupDrawerListener() {
+        //드로우어 토글메뉴 리스너 이벤트 등록(아래)
         val toggle = ActionBarDrawerToggle(
             this,
             ui.drawerLayout,
