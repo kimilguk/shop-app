@@ -17,16 +17,21 @@
 - 구현2: Model(API인터페이스) - ViewModel(데이터바인딩) - Activity(화면)
 - 구현3: 회원 로그인 액티비티 구현
 
-### 20220331(목) 상품 등록 MVVM 클래스 구성 예정
-- ProductCreateActivity.kt 부터 시작
+### 20220401(금) 상품 등록 MVVM 클래스 구성2: 뷰모델에서 데이터와 바인딩 처리
+- 작업예정
 
-### 20220330(수) 상품 메인 MVVM 클래스 구성2
+### 20220331(목) 상품 등록 MVVM 클래스 구성1 순서
+- ProductCreateViewModel.kt 추가: 초기 빈 클래스 제작
+- ProductCreateActivity.kt 추가: 액션바 코딩만 추가(AndroidManifest에 액션바 테마추가)
+- ProductCreateActivityUI.kt 추가: 초기 레이아웃만 구성 후 액티비티.kt에서 디자인 UI와 매칭 추가
+
+### 20220330(수) 상품 메인 MVVM 클래스 구성2 순서
 - ProductMainActivityUI.kt 수정: 네비게이션 드로우어에 메뉴 추가
 - ProductMainNaviHeader.kt 추가: ProductMainActivityUI의 navigationView{} 에 addHeaderView() 추가
 - ProductMainActivityUI.kt 수정: 로그아웃 구현
 - ProductMainActivityUI.kt 수정: 상품등록 버튼 추가
 
-### 20220329(화) 상품 메인 MVVM 클래스 구성1
+### 20220329(화) 상품 메인 MVVM 클래스 구성1 순서
 - ProductMainViewModel.kt 추가: 상품 진입 로직을 실행하는 클래스
 - ProductMainActivity.kt 추가: 상품 메인레이아웃 클래스(AndroidManifest.xml에 등록)
 - ProductMainActivityUI.kt 추가: 상품 메인 화면 디자인 구현
@@ -39,10 +44,10 @@
 - 로그인 시 토큰정보를 저장하여 여러 액티비티에서 토큰인증이 필요한 스프링부트API로 토큰정보를 보낼 때
 - SharedPreferences 클래스객체(txt파일)에 저장된 토큰정보를 사용하는 코딩
 
-### 20220321(월) 회원로그인2차
+### 20220321(월) 회원로그인2차 순서
 - SigninViewModel.kt, SigninActivity, SigninActivityUI 순서로 작업한다.
 
-### 20220319(토) 회원로그인1차
+### 20220319(토) 회원로그인1차 순서
 - SigninRequestVO.kt, SigninResponseVO.kt, ShopApi(@POST매핑)
 
 ### 20220318(금) 회원등록

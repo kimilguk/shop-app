@@ -8,7 +8,7 @@ import org.jetbrains.anko.setContentView
 import kotlin.reflect.KClass
 
 /**
- * 상품 메인레이아웃 클래스 BaseActivity<제네릭제한타입> 상속
+ * 상품 메인액티비티 클래스 BaseActivity<제네릭제한타입> 상속
  */
 class ProductMainActivity : BaseActivity<ProductMainViewModel>() {
     override val viewModelType: KClass<ProductMainViewModel>

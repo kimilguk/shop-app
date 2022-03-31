@@ -18,7 +18,7 @@ import org.jetbrains.anko.sdk27.coroutines.onClick
  * 회원가입 화면 디자인 구현
  */
 class SignupActivityUI(
-    private val viewModel: SignupViewModel //데이터바인딩 객체생성(주입)
+    private val viewModel: SignupViewModel //데이터바인딩처리 객체생성(주입)
 ) : AnkoComponent<SignupActivity> {
     override fun createView(ui: AnkoContext<SignupActivity>) =
         //TODO("리니어 레이아웃 시작")

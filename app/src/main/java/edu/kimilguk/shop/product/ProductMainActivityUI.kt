@@ -22,9 +22,10 @@ import org.jetbrains.anko.sdk27.coroutines.onClick
 
 /**
  * 상품 메인 화면 디자인 구현
+ * AnkoComponent<해당액티비티> 상속
  */
 class ProductMainActivityUI(
-    private val viewModel: ProductMainViewModel //데이터바인딩 객체생성(주입)
+    private val viewModel: ProductMainViewModel //데이터바인딩처리 객체생성(주입)
 ) : AnkoComponent<ProductMainActivity>, NavigationView.OnNavigationItemSelectedListener {
     lateinit var navigationView: NavigationView //클래스 멤버변수:네비게이션 뷰 닫을 때 사용
     lateinit var toolBar: Toolbar //ProductMainActivity 에서 사용예정

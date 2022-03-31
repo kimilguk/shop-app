@@ -19,7 +19,7 @@ import org.jetbrains.anko.sdk27.coroutines.onClick
  * 회원로그인 화면 디자인 구현
  */
 class SigninActivityUI(
-    private val viewModel: SigninViewModel //데이터바인딩 객체생성(주입)
+    private val viewModel: SigninViewModel //데이터바인딩처리 객체생성(주입)
 ) : AnkoComponent<SigninActivity> {
     //override fun createView(ui: AnkoContext<SigninActivity>): View {
     override fun createView(ui: AnkoContext<SigninActivity>) =

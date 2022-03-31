@@ -29,6 +29,10 @@
         <activity android:name=".users.SignupActivity" />
         <activity android:name=".auth.SigninActivity" />
         <activity android:name=".product.ProductMainActivity" />
+        <activity
+            android:name=".product.create.ProductCreateActivity"
+            android:theme="@style/Theme.AppCompat.Light"
+            />
     </application>
 
 </manifest>
