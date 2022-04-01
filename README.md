@@ -17,8 +17,13 @@
 - 구현2: Model(API인터페이스) - ViewModel(데이터바인딩) - Activity(화면)
 - 구현3: 회원 로그인 액티비티 구현
 
+### 20220402(토) 상품 등록 MVVM 클래스 구성2 예정
+- ProductCreateViewModel.kt 수정: 상품등록 비지니스 로직함수 시작
+
 ### 20220401(금) 상품 등록 MVVM 클래스 구성2: 뷰모델에서 데이터와 바인딩 처리
-- 작업예정
+- CategoryVO.kt: 상품카테고리는 숫자이고, 숫자와 매칭되는 카테고리명을 가지는 데이터클래스
+- ProductCreateVO.kt: 스프링부트 API 와 입출력시 데이터를 임시 저장한다.
+- 보통 VO부터 만든다. 이번엔 실수...
 
 ### 20220331(목) 상품 등록 MVVM 클래스 구성1 순서
 - ProductCreateViewModel.kt 추가: 초기 빈 클래스 제작

@@ -14,6 +14,7 @@ import org.jetbrains.anko.error
 /**
  * 회원로그인 로직을 실행하는 클래스(스프링부트의 @서비스와 같은 역할)
  * Application 클래스를 매개변수로 사용한 ankomvvm 의 BaseViewModel 을 상속한 클래스
+ * 뷰모델 클래스에 UI에서 사용할 데이터 정의
  */
 class SigninViewModel(app: Application) : BaseViewModel(app) {
     val email = MutableLiveData("")//anko 데이터바인딩 타입 MutableLiveData

@@ -1,9 +1,9 @@
 package edu.kimilguk.shop.users
 
 import android.util.Patterns
-
 /**
  * 클래스간 데이터 전송 임시 저장 VO(Value Object)클래스
+ * 스프링부트 API 와 입출력시 데이터를 임시 저장한다.
  */
 class SignupVO(
     val email: String?,//?는 Null 허용을 표시한다. 코틀린은 기본이 Null 허용하지 않음.
