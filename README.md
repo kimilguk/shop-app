@@ -17,18 +17,26 @@
 - 구현2: Model(API인터페이스) - ViewModel(데이터바인딩) - Activity(화면)
 - 구현3: 회원 로그인 액티비티 구현
 
-### 20220402(토) 상품 등록 MVVM 클래스 구성2 예정
+### 20220403(일) 상품 등록 MVVM 클래스 구성4(권한) 예정
+- ApiTokenInterceptor.kt 추가: 스프링부트API로 보내는 전송헤더에 토큰값을 추가하는 클래스
+- TokenAuthenticator.kt 추가: 스프링부트API 응답코드가 401(권한없음)인 경우
+-- SharedPreferences객체에 저장된 refreshToken정보로 토큰갱신 후 스프링부트API로 요청을 재시도하게 만드는 클래스
+- TokenRefreshInterceptor.kt 추가: 토큰갱신 요청 전에 refreshToken 을 추가하고
+-- 토큰갱신 요청의 응답 코드가 401(권한없음)인 경우 로그인 화면으로 이동시켜주는 클래스
+
+### 20220402(토) 상품 등록 MVVM 클래스 구성3(UI)
+- ShopApi.kt 수정: 스프링부트의 ProductApiController 와 매칭되는 상품등록경로추가
 - ProductCreateViewModel.kt 수정: 상품등록 비지니스 로직함수 시작
+- ProductCreateActivityUI.kt 수정: 상품등록 UI 추가.
 
-### 20220401(금) 상품 등록 MVVM 클래스 구성2: 뷰모델에서 데이터와 바인딩 처리
-- CategoryVO.kt: 상품카테고리는 숫자이고, 숫자와 매칭되는 카테고리명을 가지는 데이터클래스
-- ProductCreateVO.kt: 스프링부트 API 와 입출력시 데이터를 임시 저장한다.
-- 보통 VO부터 만든다. 이번엔 실수...
-
-### 20220331(목) 상품 등록 MVVM 클래스 구성1 순서
+### 20220401(금) 상품 등록 MVVM 클래스 구성2(기본MVVM틀) 순서
 - ProductCreateViewModel.kt 추가: 초기 빈 클래스 제작
 - ProductCreateActivity.kt 추가: 액션바 코딩만 추가(AndroidManifest에 액션바 테마추가)
 - ProductCreateActivityUI.kt 추가: 초기 레이아웃만 구성 후 액티비티.kt에서 디자인 UI와 매칭 추가
+
+### 20220331(목) 상품 등록 MVVM 클래스 구성1(VO): 뷰모델에서 데이터와 바인딩 처리
+- CategoryVO.kt: 상품카테고리는 숫자이고, 숫자와 매칭되는 카테고리명을 가지는 데이터클래스
+- ProductCreateVO.kt: 스프링부트 API 와 입출력시 데이터를 임시 저장한다.
 
 ### 20220330(수) 상품 메인 MVVM 클래스 구성2 순서
 - ProductMainActivityUI.kt 수정: 네비게이션 드로우어에 메뉴 추가
