@@ -17,7 +17,7 @@ class ProductMainViewModel(app: Application): BaseViewModel(app) {
             flags = Intent.FLAG_ACTIVITY_SINGLE_TOP
             //액티비티를 호출할 때 호출된 액티비티의 인스턴스가
             // 현재 태스크에 이미 실행중인 경우 활동이 재실행되지 않는다
-            // ( = 새로운 인스턴스를 생성하지 않는다.)
+            // ( = 실수로 같은 상품을 2번 등록하는 것을 방지한다.)
             /* 참고로
             FLAG_ACTIVITY_CLEAR_TOP: 이미 존재하던 액티비티는 재생성 되며 시작된다.
             */
