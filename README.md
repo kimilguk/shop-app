@@ -12,17 +12,23 @@
 
 ### 안드로이드 앱(shop-app) 프로젝트에서 구현된 내역(아래)
 - 개발툴: 안드로이드 스튜디오 범블비, 빌드툴버전: 그래들7.2, 코틀린 1.5.30, JVM 1.8
-- 사용된 기술:
+- 사용된 기술: 기본 로그 수준은 INFO입니다. 그래서, AnkoLogger 사용시 info()함수를 사용
 - 구현1: 스프링부트API 실행상태로 안드로이드 앱에서 Retrofit모듈(okhttpt사용)으로 /api/hello 접속시 json 데이터를 안드로이드 콘솔에 출력
 - 구현2: Model(API인터페이스) - ViewModel(데이터바인딩) - Activity(화면)
 - 구현3: 회원 로그인 액티비티 구현
 
-### 20220403(일) 상품 등록 MVVM 클래스 구성4(권한) 예정
+### 20220404(월) 상품 리스트 작업예정(스프링부트API먼저 작업 후)
+- 작업순서: VO - MVVM틀(ViewModel,Activity,UI) - UI - API권한확인
+
+### 20220403(일) 상품 등록 MVVM 클래스 구성4(권한)
 - ApiTokenInterceptor.kt 추가: 스프링부트API로 보내는 전송헤더에 토큰값을 추가하는 클래스
-- TokenAuthenticator.kt 추가: 스프링부트API 응답코드가 401(권한없음)인 경우
--- SharedPreferences객체에 저장된 refreshToken정보로 토큰갱신 후 스프링부트API로 요청을 재시도하게 만드는 클래스
 - TokenRefreshInterceptor.kt 추가: 토큰갱신 요청 전에 refreshToken 을 추가하고
 -- 토큰갱신 요청의 응답 코드가 401(권한없음)인 경우 로그인 화면으로 이동시켜주는 클래스
+- ApiGenerator.kt 수정: 토큰갱신요청 API 인터셉터(가로채기) 추가
+- TokenRefreshApi.kt 추가: 스프링부트API 리프레시 토큰 기능에 접근하는 인터페이스
+- TokenAuthenticator.kt 추가: 스프링부트API 응답코드가 401(권한없음)인 경우
+-- SharedPreferences객체에 저장된 refreshToken정보로 토큰갱신 후 새 request 반환
+- ApiGenerator.kt 수정: 모든 httpClient()에 토큰갱신이 필요할 때 인증함수에 토큰인증 클래스를 추가
 
 ### 20220402(토) 상품 등록 MVVM 클래스 구성3(UI)
 - ShopApi.kt 수정: 스프링부트의 ProductApiController 와 매칭되는 상품등록경로추가

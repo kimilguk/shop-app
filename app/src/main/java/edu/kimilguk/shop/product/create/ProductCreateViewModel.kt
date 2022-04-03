@@ -9,6 +9,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import net.codephobia.ankomvvm.lifecycle.BaseViewModel
 import org.jetbrains.anko.error
+import org.jetbrains.anko.info
 import retrofit2.Response
 
 /**
@@ -64,6 +65,9 @@ class ProductCreateViewModel(app: Application) : BaseViewModel(app){
         } else {
             toast(response.message?:"알 수 없는 오류가 발생했습니다.")
             //엘비스 연산자?:물음표 이전 값이 있다면 출력, 없다면 뒤 "알 수 없는~" 출력
+            //timeout 오류 발생 시 API서버에 등록은 되지만, 화면은 그대로 일 수 있다.
+            //그래서, 화면종료 추가(아래)
+            finishActivity()
         }
     }
     fun checkProductNameLength() { //상품명 글자제한 함수
