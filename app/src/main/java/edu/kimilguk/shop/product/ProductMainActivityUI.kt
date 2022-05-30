@@ -7,9 +7,14 @@ import android.view.Menu.NONE
 import android.view.MenuItem
 import android.view.MenuItem.SHOW_AS_ACTION_ALWAYS
 import android.view.View
+import android.view.View.generateViewId
 import androidx.appcompat.widget.Toolbar
 import androidx.drawerlayout.widget.DrawerLayout
+import androidx.viewpager.widget.ViewPager
 import com.google.android.material.navigation.NavigationView
+import com.google.android.material.tabs.TabLayout
+import com.google.android.material.tabs.TabLayout.GRAVITY_FILL
+import com.google.android.material.tabs.TabLayout.MODE_SCROLLABLE
 import edu.kimilguk.shop.Prefs
 import edu.kimilguk.shop.R
 import edu.kimilguk.shop.auth.SigninActivity
@@ -18,7 +23,9 @@ import org.jetbrains.anko.design.navigationView
 import org.jetbrains.anko.support.v4.drawerLayout
 import org.jetbrains.anko.appcompat.v7.toolbar //수동으로 등록해야 에러가 사라진다.
 import org.jetbrains.anko.design.floatingActionButton
+import org.jetbrains.anko.design.themedTabLayout
 import org.jetbrains.anko.sdk27.coroutines.onClick
+import org.jetbrains.anko.support.v4.viewPager
 
 /**
  * 상품 메인 화면 디자인 구현
@@ -30,6 +37,8 @@ class ProductMainActivityUI(
     lateinit var navigationView: NavigationView //클래스 멤버변수:네비게이션 뷰 닫을 때 사용
     lateinit var toolBar: Toolbar //ProductMainActivity 에서 사용예정
     lateinit var drawerLayout: DrawerLayout //ProductMainActivity 에서 사용예정
+    lateinit var tablayout: TabLayout // 카테고리 탭은 ProductMainActivity 에서 사용예정
+    lateinit var viewpager: ViewPager // 상품리스트 뷰페이저는 ProductMainActivity 에서 사용예정
     override fun createView(ui: AnkoContext<ProductMainActivity>): View {
         //TODO("드로우어 레이아웃 시작")
         return ui.drawerLayout {
@@ -48,6 +57,24 @@ class ProductMainActivityUI(
                     view {
                         backgroundColor = Color.parseColor("#DDDDDD")
                     }.lparams(matchParent, dip(1))
+
+                    //카테고리 TabLayout을 생성하는 함수와 빌더(아래)
+                    tablayout = themedTabLayout(
+                        net.codephobia.ankomvvm.R.style.Widget_MaterialComponents_TabLayout
+                    ) {
+                        bottomPadding = dip(1)
+                        tabMode = MODE_SCROLLABLE //카테고리 탭 크기를 유지하면서 스크롤 할 수 있게 처리
+                        tabGravity = GRAVITY_FILL //탭 영역을 상위 컨테이너에 맞게 가득 채운다.
+                        lparams(matchParent, wrapContent)
+                    }
+                    //카테고리 탭 하단에 1dp 짜리 선 만들기(아래-inline 뷰 만들기)
+                    view {
+                        backgroundColor = Color.parseColor("#DDDDDD")
+                    }.lparams(matchParent, dip(1))
+                    //뷰페이저 생성(아래)
+                    viewpager = viewPager {
+                        id = generateViewId() //뷰페이저와 탭레이아웃 연동시 view클래스의 id값 필수
+                    }.lparams(matchParent, matchParent)
                 }.lparams(matchParent, matchParent)//리니어레이아웃을 수직 세로로 배치
 
                 //상품 등록 버튼 출력(아래)

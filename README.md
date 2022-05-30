@@ -17,8 +17,18 @@
 - 구현2: Model(API인터페이스) - ViewModel(데이터바인딩) - Activity(화면)
 - 구현3: 회원 로그인 액티비티 구현
 
-### 20220404(월) 상품 리스트 작업예정(스프링부트API먼저 작업 후)
-- 작업순서: VO - MVVM틀(ViewModel,Activity,UI) - UI - API권한확인
+### 20220531(화) 상품 리스트 내용 출력 만들기 예정
+- 실제 리스트 데이터를 출력하는 부분인 RecyclerView(상하스크롤)를 추가할 예정
+- 스프링부트에서 반환받은 값을 안드로이드에서 처리하는 api를 api/response/ProductListItemResponse.kt 생성
+- 필요한 기능 클래스: ViewHolder(뷰유지), RecyclerView.Adapter -> PagedListAdapter(페이징구현)
+- 페이징 기능 클래스: PageKeyedDataSource(초기데이터, next데이터, prev데이터)
+
+### 20220530(월) 상품 리스트 기본 틀 만들기(스프링부트API먼저 작업 후)
+- 작업1: ProductMainActivityUI 상품메인액티비티에 카테고리 탭과 상품리스트 뷰페이저 자바디자인 추가
+- 작업2: MVVM틀(ViewModel,Activity,UI) 중 ProductListViewModel.kt 상품리스트 클릭 틀 생성
+- 작업3: 뷰페이저(좌우스크롤)에 들어갈 상품 리스트를 출력해주는 ProductListFragment를 생성.
+- 작업4: 뷰페이저에 들어갈 데이터를 구현한 ProductListPagerAdapter 뷰페이저 어댑터 클래스
+- 작업5: ProductMainActivity 에 뷰페이저어댑터객체 생성 후 카테고리 탭레이아웃과 뷰페이저 연동
 
 ### 20220403(일) 상품 등록 MVVM 클래스 구성4(권한)
 - ApiTokenInterceptor.kt 추가: 스프링부트API로 보내는 전송헤더에 토큰값을 추가하는 클래스
