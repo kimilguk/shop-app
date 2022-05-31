@@ -1,5 +1,6 @@
 package edu.kimilguk.shop.api
 
+import edu.kimilguk.shop.api.response.ProductListItemResponse
 import edu.kimilguk.shop.auth.SigninRequestVO
 import edu.kimilguk.shop.auth.SigninResponseVO
 import edu.kimilguk.shop.product.create.ProductCreateVO
@@ -8,6 +9,7 @@ import retrofit2.Response
 import retrofit2.http.Body
 import retrofit2.http.GET
 import retrofit2.http.POST
+import retrofit2.http.Query
 
 /**
  * 스프링부트API 쇼핑 기능에 접근하는 인터페이스
@@ -28,4 +30,12 @@ interface ShopApi {
     //상품 관리(아래)
     @POST("/api/products") //스프링부트의 ProductApiController 와 매칭된다.
     suspend fun createProduct(@Body productCreateVO: ProductCreateVO): ApiResponse<Void>//반환값이 없는 함수를 실행한다.
+    @GET("/api/products") //스프링부트의 ProductApiController 와 매칭된다.
+    suspend fun getProducts(
+        @Query("productId") productId: Long,
+        @Query("categoryId") categoryId: Int?,
+        @Query("direction") direction: String //prev, next
+    ): ApiResponse<List<ProductListItemResponse>>//반환값이 상품배열 리스트이다.
+    //스프링부트API: http://127.0.0.1:8080/api/products?productId=11&direction=next&categoryId=1
+    //결과: 1부터 10까지의 productId 상품을 출력
 }

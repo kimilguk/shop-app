@@ -62,5 +62,8 @@ dependencies {
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$ankoMvvm_version"
     implementation "androidx.lifecycle:lifecycle-livedata-ktx:$ankoMvvm_version"
     implementation "androidx.lifecycle:lifecycle-runtime-ktx:$ankoMvvm_version"
-
+    //리사이클러뷰와 페이징 라이브러러 사용 의존성 모듈추가(아래)
+    implementation "org.jetbrains.anko:anko-recyclerview-v7:$anko_version"
+    implementation "org.jetbrains.anko:anko-recyclerview-v7-coroutines:$anko_version"
+    implementation "androidx.paging:paging-runtime-ktx:2.1.0"
 }
