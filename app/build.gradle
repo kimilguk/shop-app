@@ -66,4 +66,6 @@ dependencies {
     implementation "org.jetbrains.anko:anko-recyclerview-v7:$anko_version"
     implementation "org.jetbrains.anko:anko-recyclerview-v7-coroutines:$anko_version"
     implementation "androidx.paging:paging-runtime-ktx:2.1.0"
+    //상품 이미지 출력에 필요한 의존성 모듈(아래)
+    implementation 'com.github.bumptech.glide:glide:4.9.0'
 }

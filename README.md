@@ -17,6 +17,12 @@
 - 구현2: Model(API인터페이스) - ViewModel(데이터바인딩) - Activity(화면)
 - 구현3: 회원 로그인 액티비티 구현
 
+### 20220601(수) 상품 리스트 내용 출력용 RecyclerView(상하스크롤) 만들기2
+- 전처리, 스프링부트 API 에서 정의한 상품 판매 상태값 나열값을 정의한 ProductStatus.kt 싱글톤 상수생성
+- 리사이클러뷰에 들어갈 상하스크롤 시 데이터를 구현한 ProductListPagedAdapter 어댑터클래스 생성(아래) 
+- 작업1, 리사이클러뷰에 들어갈 상하스크롤 시 데이터를 구현한 페이지드리스트어댑터 클래스
+- 작업2, 상품이미지를 어댑터뷰홀더에 바인딩 시키기 위한 bumptech.glide 외부 모듈 추가
+
 ### 20220531(화) 상품 리스트 내용 출력용 RecyclerView(상하스크롤) 만들기1
 - 앱수준의 build.gradle에 리사이클러뷰와 페이징 라이브러러 사용 의존성 모듈추가
 - 스프링부트에서 반환받은 상품값을 안드로이드에서 처리하는 api를 api/response/ProductListItemResponse.kt 생성

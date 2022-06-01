@@ -7,7 +7,7 @@ import edu.kimilguk.shop.product.category.CategoryVO
 import edu.kimilguk.shop.product.category.categoryList
 
 /**
- * 뷰페이저에 들어갈 데이터를 구현한 뷰페이저 어댑터 클래스
+ * 뷰페이저에 들어갈 좌우 스와이프 시 데이터를 구현한 뷰페이저 어댑터 클래스
  * FragmentStatePagerAdapter 를 상속한 클래스
  */
 class ProductListPagerAdapter(fragmentManager: FragmentManager) : FragmentStatePagerAdapter(

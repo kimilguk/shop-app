@@ -10,7 +10,8 @@ class ProductListItemResponse(
     val description: String,
     val price: Int,
     val status: String,
-    val sellerId: Long
+    val sellerId: Long,
+    val imagePaths: List<String>//상품 이미지는 나중에 사용예정(아래)
 ) {
     
 }
