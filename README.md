@@ -17,6 +17,10 @@
 - 구현2: Model(API인터페이스) - ViewModel(데이터바인딩) - Activity(화면)
 - 구현3: 회원 로그인 액티비티 구현
 
+### 20220602(목) 상품 리스트 내용 출력용 RecyclerView(상하스크롤) 만들기3
+- RecyclerView에 ProductListPagedAdapter를 바인딩하는 ProductListViewModel 수정.
+- ProductDetailActivity.kt 액티비티인 상품상세 페이지는 나중에 작업예정
+
 ### 20220601(수) 상품 리스트 내용 출력용 RecyclerView(상하스크롤) 만들기2
 - 전처리, 스프링부트 API 에서 정의한 상품 판매 상태값 나열값을 정의한 ProductStatus.kt 싱글톤 상수생성
 - 리사이클러뷰에 들어갈 상하스크롤 시 데이터를 구현한 ProductListPagedAdapter 어댑터클래스 생성(아래) 
