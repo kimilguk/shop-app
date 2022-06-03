@@ -31,10 +31,13 @@ class ProductListFragment : BaseFragment<ProductListViewModel>() {
         container: ViewGroup?,
         savedInstanceState: Bundle?,
     ): View? { //앙코 코틀린코드로 디자인 출력
-        return AnkoContext.create(ctx, this).verticalLayout { 
+        /*return AnkoContext.create(ctx, this).verticalLayout {
             textView(categoryId.toString())
             textView(title)
-        }
+        }*/
+        val viewModel = getViewModel()
+        viewModel.categoryId = categoryId //ProductListViewModel에 사용될 카테고리Id 값 입력
+        return ProductListUI(viewModel).createView(AnkoContext.create(ctx, this))
     }
     //static 대신 companion 을 사용, object는 싱글톤 클래스로 실행과 동시에 1개의 객체가 생성된다.
     companion object {

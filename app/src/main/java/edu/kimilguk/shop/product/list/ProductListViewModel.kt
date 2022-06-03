@@ -34,10 +34,11 @@ ProductListPagedAdapter.OnItemClickListener {
     }
     //ProductListPagedAdapter.OnItemClickListener 상품 클릭이벤트 인터페이스 구현
     override fun onClickProduct(productId: Long?) {
-        startActivity<ProductDetailActivity> {
+        toast("클릭한 $productId")
+        /*startActivity<ProductDetailActivity> {
             flags = Intent.FLAG_ACTIVITY_SINGLE_TOP //호출된 액티비티가 태스크의 루트에 이미 실행중인 경우 활동이 재실행되지 않는다.
             putExtra(ProductDetailActivity.PRODUCT_ID, productId)
-        }
+        }*/
     }
     //RecyclerView에 ProductListPagedAdapter를 바인딩하는 ProductListViewModel 수정 끝
 

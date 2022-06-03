@@ -17,6 +17,13 @@
 - 구현2: Model(API인터페이스) - ViewModel(데이터바인딩) - Activity(화면)
 - 구현3: 회원 로그인 액티비티 구현
 
+### 20220604(토) 상품 상세 내용 출력 작업예정
+- product/detail 패키지 내용 추가
+
+### 20220603(금) 상품 리스트 내용 출력용 RecyclerView(상하스크롤) 만들기4
+- ProductListUI.kt 생성: ProductListFragment + 리사이클러 뷰 로 구성된 앙코 UI클래스
+- ProductListFragment.kt 의 fun onCreateView 에서 ProductListUI 사용
+
 ### 20220602(목) 상품 리스트 내용 출력용 RecyclerView(상하스크롤) 만들기3
 - RecyclerView에 ProductListPagedAdapter를 바인딩하는 ProductListViewModel 수정.
 - ProductDetailActivity.kt 액티비티인 상품상세 페이지는 나중에 작업예정

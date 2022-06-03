@@ -59,16 +59,21 @@ class ProductListPagedAdapter( //1
                 if(ProductStatus.SOLD_OUT == item.status) {
                     "{품절}"
                 }else{
-                    ""
+                    "{판매중}"
                 }
             val commaSeparatedPrice = NumberFormat.getNumberInstance().format(item.price)
             ui.productName.text = item.name
-            ui.price.text = "\$commaSeparatedPrice $soldOutString"
-            //상품 이미지는 나중에 사용예정(아래)
-            Glide.with(ui.imageView)
-                .load("${ApiGenerator.HOST}${item.imagePaths.firstOrNull()}")
-                .centerCrop()
-                .into(ui.imageView)
+            ui.price.text = "$commaSeparatedPrice $soldOutString"
+            try {
+                //상품 이미지는 나중에 사용예정(아래)
+                Glide.with(ui.imageView)
+                    .load("${ApiGenerator.HOST}${item.imagePaths.firstOrNull()}")
+                    .centerCrop()
+                    .into(ui.imageView)
+            } catch (e: Exception) {
+
+            }
+
         }
         var productId: Long? = null
         init {
